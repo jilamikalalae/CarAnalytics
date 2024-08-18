@@ -20,7 +20,7 @@ const Root = () => {
             <Container>
               <Navbar.Brand >Navbar</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link >Home</Nav.Link>
+                <Nav.Link ><Link to="/">Home</Link></Nav.Link>
                 <Nav.Link >Features</Nav.Link>
                 <Nav.Link >Pricing</Nav.Link>
               </Nav>
