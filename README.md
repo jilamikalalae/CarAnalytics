@@ -80,11 +80,11 @@ To get a local copy up and running follow these simple example steps.
         <img src="https://avatars.githubusercontent.com/u/142904995?v=4" alt="jilamika image" height="50" style="border-radius: 25px 25px 25px 25px"/> 
 </a>
 <br>
-- 6511063 Jilamika Lalae
+6511063 Jilamika Lalae
 <br>
-- 6511641 Chetsuda Photiboon
+6511641 Chetsuda Photiboon
 <br>
-- 6520214 Wattanan Jiratriluk
+6520214 Wattanan Jiratriluk
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
