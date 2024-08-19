@@ -31,26 +31,14 @@ jobs:
     - name: Build
       run: pnpm run build
 
-    - name: Upload build files
-      uses: actions/upload-artifact@v2
-      with:
-        name: production-files
-        path: ./dist
-
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: production-files
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          publish_dir: ./dist
+    - name: Deploy
+      run: |
+        git config --global user.name $user_name
+        git config --global user.email $user_email
+        git remote set-url origin https://${github_token}@github.com/${repository}
+        gh-pages -d dist -m "Deploy:${{ github.sha }}""
+      env:
+        user_name: 'jilamikalalae'
+        user_email: 'jilamikalalae@gmail.com'
+        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
+        repository: ${{ github.repository }}
