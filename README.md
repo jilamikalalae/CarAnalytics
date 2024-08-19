@@ -51,23 +51,19 @@ To get a local copy up and running follow these simple example steps.
 
 ### Installation
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-2. Install packages
+1. Install packages
    ```sh
    pnpm install
    ```
-3. Run
+2. Run
    ```sh
    pnpm run dev
    ```
-4. Build
+3. Build
    ```sh
    pnpm run build
    ```
-5. Preview build file
+4. Preview build file
    ```sh
    pnpm run preview
    ```
@@ -84,11 +80,9 @@ To get a local copy up and running follow these simple example steps.
         <img src="https://avatars.githubusercontent.com/u/142904995?v=4" alt="jilamika image" height="50" style="border-radius: 25px 25px 25px 25px"/> 
 </a>
  <br>
- 6511063 Jilamika Lalae
- <br>
- 6511641 Chetsuda Photiboon
-<br>
-6520214 Wattanan Jiratriluk
+* 6511063 Jilamika Lalae
+* 6511641 Chetsuda Photiboon
+* 6520214 Wattanan Jiratriluk
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
