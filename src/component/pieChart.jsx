@@ -1,53 +1,41 @@
-import React, { useEffect, useRef } from "react";
-import Chart from "chart.js/auto";
-const PieChart = () => {
-  const data = {
-    labels: ["Red", "Blue", "Yellow"],
+import React from 'react';
+import { Pie } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
+
+const colorPalette = [
+  '#D1E9F6', '#F6EACB', '#F1D3CE', '#EECAD5', '#CCD5AE', 
+  '#E0E5B6', '#FAEDCE', '#FEFAE0', '#91DDCF', '#F7F9F2',
+  '#E8C5E5', '#F19ED2', '#B1AFFF', '#BBE9FF', '#FFFED3',
+  '#FF9EAA', '#FFD0D0', '#FFE4CF', '#FF5BAE', '#E72929',
+  '#F6D6D6'
+];
+
+const PieChart = ({ data }) => {
+  const chartData = {
+    labels: data.map(item => item.brand),
     datasets: [
       {
-        label: "My First Dataset",
-        data: [300, 50, 100],
-        backgroundColor: [
-          "rgb(255, 99, 132)",
-          "rgb(54, 162, 235)",
-          "rgb(255, 205, 86)",
-        ],
-        hoverOffset: 4,
+        data: data.map(item => item.value),
+        backgroundColor: colorPalette,
       },
     ],
   };
-  const chartRef = useRef(null);
-
-  useEffect(() => {
-    const ctx = document.getElementById("acquisitions");
-    // Destroy previous chart instance if it exists
-    if (chartRef.current) {
-      chartRef.current.destroy();
+  const options = {
+    plugins: {
+      legend: {
+        position: 'top'
+      },
+      tooltip: {
+        callbacks: {
+          label: (tooltipItem) => `Value: ${tooltipItem.raw.toLocaleString()} Baht`
+        }
+      }
     }
+  };
 
-    chartRef.current = new Chart(ctx, {
-      type: "pie",
-      data: data,
-      //   type: "bar",
-      //   data: {
-      //     labels: data.map((row) => row.year),
-      //     datasets: [
-      //       {
-      //         label: "Acquisitions by year",
-      //         data: data.map((row) => row.count),
-      //       },
-      //     ],
-      //   },
-    });
-  });
-  return (
-    <>
-      <div style={{ width: "500px" }}>
-        <canvas id="acquisitions"></canvas>
-      </div>
-      {/* <BarChart></BarChart> */}
-    </>
-  );
+  return <Pie data={chartData} options={options} />;
 };
 
 export default PieChart;
