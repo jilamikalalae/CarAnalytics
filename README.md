@@ -1,9 +1,16 @@
-# React + Vite
+## About The Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Currently, two official plugins are available:
+The "Car Analytics" app is designed to help users visualize car inventory data. The app features a dashboard that presents car data through chart.js, making it easy to analyze various aspects of the inventory. Additionally, it includes a page for highlighting specific cars, with selected cars saved using Local Storage for persistence. The project focuses on providing a simple and effective tool for data analysis and will be deployed on GitHub Pages.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# CarAnalytics
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project.
+
+- [![React][React.js]][React-url]
+- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+- [![Chart][Chart.js]][Chartjs-url]
+
+[Bootstrap-url]: https://getbootstrap.com
+[Chartjs-url]: https://www.chartjs.org/
