@@ -1,23 +1,76 @@
-## About The Project
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contributors">Contributors</a></li>
+  </ol>
+</details>
 
-Dashboard Page
-<img src="./src/assets/dashboard.png">
-Hightlight Page
-<img src="./src/assets/highlight.png">
+## About The Project
 
 The "Car Analytics" app is designed to help users visualize car inventory data. The app features a dashboard that presents car data through chart.js, making it easy to analyze various aspects of the inventory. Additionally, it includes a page for highlighting specific cars, with selected cars saved using Local Storage for persistence. The project focuses on providing a simple and effective tool for data analysis and will be deployed on GitHub Pages.
 
-## Overview
+### Overview
+For youtube link url please click below 
+[👇](https://youtu.be/HRp3HMlS8Qo)
+<br>
+<br>
+[![Watch the video](https://github.com/user-attachments/assets/a5c88825-47c7-4fb9-8233-51e2e0f9a5a7)](https://youtu.be/HRp3HMlS8Qo)
 
-[![Watch the video](./src/assets/dashboard.png)](https://www.youtube.com/watch?v=HRp3HMlS8Qo)
+* Dashboard Page & Highlight Page
+<img src="./src/assets/dashboard.png">
+<img src="./src/assets/highlight.png">
 
 ### Built With
-
 This section should list any major frameworks/libraries used to bootstrap your project.
 
 - [![React][React.js]][React-url]
 - [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 - <img src="https://storage.googleapis.com/dycr-web/image/topic/chartjs/chartjs.png" width="100">
+
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+* [pnpm](https://pnpm.io/installation)
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+2. Install packages
+   ```sh
+   pnpm install
+   ```
+3. Run
+   ```sh
+   pnpm run dev
+   ```
+4. Build
+   ```sh
+   pnpm run build
+   ```
+5. Preview build file
+   ```sh
+   pnpm run preview
+   ```
 
 ### Contributors:
 
