@@ -1,17 +1,12 @@
+import React, { useEffect, useRef } from "react";
+import PieChart from "../component/pieChart";
+
 const Dashboard = () => {
-    return (
-        <>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
-    <div>Dashboard</div>
+  return (
+    <>
+      <PieChart />
     </>
-    )
-}
+  );
+};
 
 export default Dashboard;
