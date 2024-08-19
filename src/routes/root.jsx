@@ -18,10 +18,10 @@ const Root = () => {
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href='/dashboard'>Car Analytics</Navbar.Brand>
+          <Navbar.Brand href='dashboard'>Car Analytics</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href='/dashboard'>Dashboard</Nav.Link>
-            <Nav.Link href='/highlight'>Highlight</Nav.Link>
+            <Nav.Link href='dashboard'>Dashboard</Nav.Link>
+            <Nav.Link href='highlight'>Highlight</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
