@@ -13,7 +13,7 @@ import Dashboard from "./routes/dashboard";
 
 const router = createBrowserRouter([
   {
-    path: "/CarAnalytics",
+    path: "/",
     element: <Root />,
     children: [
       { index: true, element: <Dashboard /> },
