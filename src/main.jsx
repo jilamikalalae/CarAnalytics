@@ -7,6 +7,8 @@ import {
 import "./index.css";
 import Root from "./routes/root";
 import 'bootstrap/dist/css/bootstrap.min.css'; 
+import Highlight from './routes/highlight'
+import Dashboard from "./routes/dashboard";
 
 
 const router = createBrowserRouter([
@@ -14,7 +16,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     children: [
-
+      { index: true, element: <Dashboard /> },
+      {
+        path: 'dashboard',
+        element: <Dashboard />
+      },
+      {
+        path: 'highlight',
+        element: <Highlight />
+      },
     ]
   },
 ]);
