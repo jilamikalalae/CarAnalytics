@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jilamikalalae.github.io/car-analytics",
+  "homepage": "https://jilamikalalae.github.io/CarAnalytics",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
