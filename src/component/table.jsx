@@ -18,7 +18,7 @@ const TableComponent = ({ sortedBrands }) => {
           <th>Brand</th>
           <th>Total Value (Baht)</th>
           <th>Total Amount</th>
-          <th>Actions</th>
+          <th>Model</th>
         </tr>
       </thead>
       <tbody>
