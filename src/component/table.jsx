@@ -1,35 +1,65 @@
-import React from "react";
-import { Table } from 'react-bootstrap';
+import React, { useState } from "react";
+import { Table, Button } from "react-bootstrap";
 
 const TableComponent = ({ sortedBrands }) => {
+  const [expandedBrands, setExpandedBrands] = useState({});
+
+  const toggleExpand = (brand) => {
+    setExpandedBrands((prev) => ({
+      ...prev,
+      [brand]: !prev[brand],
+    }));
+  };
+
   return (
     <Table striped bordered hover>
       <thead>
         <tr>
           <th>Brand</th>
-          <th>Model</th>
-          <th>Value (Baht)</th>
-          <th>Amount</th>
+          <th>Total Value (Baht)</th>
+          <th>Total Amount</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        {sortedBrands.map((brandData, index) => (
-          <React.Fragment key={index}>
-            <tr>
-              <td rowSpan={brandData.models.length}>{brandData.brand}</td>
-              <td>{brandData.models[0]?.name}</td>
-              <td>{brandData.models[0]?.value.toLocaleString()}</td>
-              <td>{brandData.models[0]?.count}</td>
-            </tr>
-            {brandData.models.slice(1).map((model, idx) => (
-              <tr key={idx}>
-                <td>{model.name}</td>
-                <td>{model.value.toLocaleString()}</td>
-                <td>{model.count}</td>
+        {sortedBrands.map((brandData, index) => {
+          const isExpanded = expandedBrands[brandData.brand];
+          const totalValue = brandData.models.reduce(
+            (acc, model) => acc + model.value,
+            0
+          );
+          const totalAmount = brandData.models.reduce(
+            (acc, model) => acc + model.count,
+            0
+          );
+
+          return (
+            <React.Fragment key={index}>
+              <tr>
+                <td>{brandData.brand}</td>
+                <td>{totalValue.toLocaleString()}</td>
+                <td>{totalAmount}</td>
+                <td>
+                  <Button
+                    variant="link"
+                    onClick={() => toggleExpand(brandData.brand)}
+                  >
+                    {isExpanded ? "Hide Details" : "Show Details"}
+                  </Button>
+                </td>
               </tr>
-            ))}
-          </React.Fragment>
-        ))}
+              {isExpanded &&
+                brandData.models.map((model, idx) => (
+                  <tr key={idx}>
+                    <td></td>
+                    <td>{model.name}</td>
+                    <td>{model.value.toLocaleString()}</td>
+                    <td>{model.count}</td>
+                  </tr>
+                ))}
+            </React.Fragment>
+          );
+        })}
       </tbody>
     </Table>
   );
