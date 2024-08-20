@@ -25,10 +25,10 @@ The "Car Analytics" app is designed to help users visualize car inventory data. 
 
 ### Overview
 For youtube link url please click below 
-[👇](https://youtu.be/HRp3HMlS8Qo)
+[👇](https://youtu.be/xuiyrAq9nps)
 <br>
 <br>
-[![Watch the video](https://github.com/user-attachments/assets/a5c88825-47c7-4fb9-8233-51e2e0f9a5a7)](https://youtu.be/HRp3HMlS8Qo)
+[![carAnalytics](https://github.com/user-attachments/assets/c7931b77-9bd8-4c01-8233-f3629f6c9eef)](https://youtu.be/xuiyrAq9nps)
 
 * Dashboard Page & Highlight Page
 <img src="./src/assets/dashboard.png">
