@@ -1,13 +1,14 @@
 import React from "react";
 import PieChart from "../component/pieChart";
-import StackedBarChart from '../component/StackedBarChart';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Container, Row, Col } from 'react-bootstrap';
-import carData from '../taladrod-cars.min.json';
-import TableComponent from '../component/table';
+import BarChart from "../component/BarChart";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, Container, Row, Col } from "react-bootstrap";
+import carData from "../taladrod-cars.min.json";
+import TableComponent from "../component/table";
+import StackbarChart from "../component/stackbarChart";
 
 const formatPrice = (priceString) => {
-  return parseFloat(priceString.replace(/,/g, ''));
+  return parseFloat(priceString.replace(/,/g, ""));
 };
 
 const Dashboard = () => {
@@ -17,8 +18,9 @@ const Dashboard = () => {
   const brandModels = {};
   const modelCounts = {};
 
-  cars.forEach(car => {
-    const brandName = brands.find(brand => brand.mkID === car.MkID)?.Name || 'Unknown';
+  cars.forEach((car) => {
+    const brandName =
+      brands.find((brand) => brand.mkID === car.MkID)?.Name || "Unknown";
     if (!brandModels[brandName]) {
       brandModels[brandName] = { totalValue: 0, models: [] };
     }
@@ -36,22 +38,24 @@ const Dashboard = () => {
     brandModels[brandName].models.push({
       name: modelName,
       value: modelValue,
-      count: modelCounts[modelName].count
+      count: modelCounts[modelName].count,
     });
   });
 
-  const sortedBrands = Object.keys(brandModels).sort().map(brand => ({
-    brand,
-    ...brandModels[brand]
-  }));
+  const sortedBrands = Object.keys(brandModels)
+    .sort()
+    .map((brand) => ({
+      brand,
+      ...brandModels[brand],
+    }));
 
-  sortedBrands.forEach(brandData => {
+  sortedBrands.forEach((brandData) => {
     brandData.models.sort((a, b) => b.value - a.value);
   });
 
-  const pieChartData = sortedBrands.map(brand => ({
+  const pieChartData = sortedBrands.map((brand) => ({
     brand: brand.brand,
-    value: brand.totalValue
+    value: brand.totalValue,
   }));
 
   return (
@@ -75,8 +79,16 @@ const Dashboard = () => {
         <Col md={6}>
           <Card>
             <Card.Body>
-              <Card.Title className="text-center">Stacked Bar Chart</Card.Title>
-              <StackedBarChart data={carData} />
+              <Card.Title className="text-center">Bar Chart</Card.Title>
+              <BarChart data={carData} />
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col md={13}>
+          <Card>
+            <Card.Body>
+              <Card.Title className="text-center">Stack Bar Chart</Card.Title>
+              <StackbarChart carData={carData} />
             </Card.Body>
           </Card>
         </Col>
